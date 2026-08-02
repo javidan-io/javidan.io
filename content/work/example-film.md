@@ -2,6 +2,7 @@
 title: Example Film
 tagline: Short film, 2025
 order: 20
+type: Movie
 ---
 
 A second placeholder, deliberately without `icon` or `href`, so the Work list

@@ -14,6 +14,9 @@ const workFrontmatter = z.object({
   href: z.string().optional(),
   order: z.number().default(100),
   draft: z.boolean().default(false),
+  type: z
+    .enum(["CreativeWork", "SoftwareApplication", "Movie", "VideoObject"])
+    .default("CreativeWork"),
 });
 
 const pageFrontmatter = z.object({
