@@ -11,12 +11,12 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       >
         Skip to content
       </a>
-      <div className="w-full max-w-4xl rounded-card bg-card px-6 py-8 shadow-card sm:px-10 sm:py-12 md:px-14 md:py-14">
+      <div className="w-full max-w-4xl rounded-card px-6 py-8 sm:px-10 sm:py-12 md:px-14 md:py-14">
         <div className="grid gap-8 md:grid-cols-[minmax(0,11rem)_minmax(0,1fr)] md:gap-14">
           <header className="md:sticky md:top-14 md:self-start">
             <Link
               href="/"
-              className="font-display text-2xl font-semibold text-accent md:block md:text-right"
+              className="font-display text-2xl font-semibold md:block md:text-right"
             >
               {site.name}
             </Link>

@@ -3,12 +3,7 @@ title: About me
 description: Programmer and filmmaker.
 ---
 
-Replace this with your own introduction.
-
-Markdown works as you would expect: **bold**, _italic_, [links](https://example.com),
-lists, and headings.
-
-## A heading
-
-Headings get an `id` and become self-linking, so any section here can be linked
-to directly.
+Senior Frontend Engineer with over 6 years of experience, including leading
+teams, building complex UI systems and defining robust architecture. Domain
+expert in fintech and ed-tech products, with a focus on security, performance
+and accessibility.

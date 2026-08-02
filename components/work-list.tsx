@@ -12,7 +12,7 @@ function IconTile({ item }: { item: WorkItem }) {
         alt=""
         width={ICON_SIZE}
         height={ICON_SIZE}
-        className="size-18 shrink-0 rounded-icon shadow-icon"
+        className="size-18 shrink-0 bg-black shadow-icon rounded-sm"
       />
     );
   }
