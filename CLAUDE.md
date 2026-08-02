@@ -4,5 +4,4 @@ This is the portfolio website. We will follow the rules below during development
 
 [The Task Execution Rule]: Once an approach is approved, convert it into a mini-spec or implementation plan consisting of a simple task list (concrete, ordered items with clear "done" criteria). When generating code, implement only one task at a time.
 
-
-after each significant change, provide a proper commit title before moving on
+[COMMIT]: After each significant change, provide a proper commit title before moving on
