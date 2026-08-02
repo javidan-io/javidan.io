@@ -1,8 +1,25 @@
-export default function About() {
+import type { Metadata } from "next";
+import { getPage } from "@/lib/content";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await getPage("about");
+
+  return {
+    title: page.title,
+    description: page.description,
+  };
+}
+
+export default async function About() {
+  const page = await getPage("about");
+
   return (
-    <div>
-      <h1 className="font-display text-2xl font-semibold">About me</h1>
-      <p className="mt-3 text-muted">Coming from content/pages/about.md.</p>
-    </div>
+    <article>
+      <h1 className="font-display text-2xl font-semibold">{page.title}</h1>
+      <div
+        className="prose mt-6"
+        dangerouslySetInnerHTML={{ __html: page.html }}
+      />
+    </article>
   );
 }
