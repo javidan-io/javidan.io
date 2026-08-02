@@ -1,8 +1,19 @@
-export default function Home() {
+import { getWorkItems } from "@/lib/content";
+
+export default async function Home() {
+  const items = await getWorkItems();
+
   return (
     <div>
       <h1 className="font-display text-2xl font-semibold">Work</h1>
-      <p className="mt-3 text-muted">Programmer and filmmaker.</p>
+      <ul className="mt-6 space-y-3">
+        {items.map((item) => (
+          <li key={item.slug}>
+            <span className="font-display font-medium">{item.title}</span>
+            <span className="text-muted"> — {item.tagline}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
