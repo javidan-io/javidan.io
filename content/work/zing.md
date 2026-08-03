@@ -1,6 +1,6 @@
 ---
-title: Zing
-tagline: Cross-border money app by HSBC
+title: Zing - money app by HSBC Bank
+tagline: Pioneered the architecture and full-scale launch of web app
 icon: /work/zing.webp
 order: 10
 type: SoftwareApplication

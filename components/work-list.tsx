@@ -12,7 +12,7 @@ function IconTile({ item }: { item: WorkItem }) {
         alt=""
         width={ICON_SIZE}
         height={ICON_SIZE}
-        className="size-18 shrink-0 bg-black shadow-icon rounded-sm"
+        className="size-18 shrink-0 bg-black shadow-icon rounded-xs"
       />
     );
   }
@@ -98,7 +98,7 @@ function MoreToCome() {
 
 export function WorkList({ items }: { items: WorkItem[] }) {
   return (
-    <ul className="space-y-9 sm:space-y-11">
+    <ul className="space-y-3 sm:space-y-6">
       {items.map((item) => (
         <WorkRow key={item.slug} item={item} />
       ))}
