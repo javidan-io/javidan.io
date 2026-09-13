@@ -35,3 +35,8 @@ export function resolveWorkTab(value: string | string[] | undefined) {
   const tab = workTabs.find((item) => item.value === value);
   return tab ? tab.value : defaultWorkTab;
 }
+
+/** Display label for a work category, kept in step with the tab labels. */
+export function workCategoryLabel(category: Exclude<WorkTabValue, "all">) {
+  return workTabs.find((tab) => tab.value === category)?.label ?? category;
+}
