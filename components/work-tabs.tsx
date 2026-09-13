@@ -24,7 +24,7 @@ export function WorkTabs({ active }: { active: WorkTabValue }) {
                 href={tab.href}
                 scroll={false}
                 aria-current={selected ? "page" : undefined}
-                className={`flex flex-col items-center gap-1.5 ${navLinkClass(
+                className={`flex flex-col items-center gap-0.5 ${navLinkClass(
                   selected,
                 )}`}
               >
