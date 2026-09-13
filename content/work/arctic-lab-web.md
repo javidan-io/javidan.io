@@ -1,6 +1,7 @@
 ---
 title: Arctic Lab - education platform
 tagline: Owning the web app as lead full-stack engineer
+category: web
 href: https://arcticlab.io
 order: 15
 type: SoftwareApplication

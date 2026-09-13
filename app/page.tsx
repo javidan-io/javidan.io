@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/json-ld";
 import { WorkList } from "@/components/work-list";
+import { WorkTabs } from "@/components/work-tabs";
 import { getWorkItems } from "@/lib/content";
 import { workListSchema } from "@/lib/schema";
-import { site } from "@/lib/site";
+import { resolveWorkTab, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: { absolute: site.name },
@@ -11,14 +12,30 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-export default async function Home() {
-  const items = await getWorkItems();
+type SearchParams = Promise<Record<string, string | string[] | undefined>>;
+
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: SearchParams;
+}) {
+  const [items, params] = await Promise.all([getWorkItems(), searchParams]);
+  const active = resolveWorkTab(params.tab);
+  const visible =
+    active === "all"
+      ? items
+      : items.filter((item) => item.category === active);
 
   return (
     <>
       <h1 className="sr-only">Work</h1>
-      <WorkList items={items} />
-      <JsonLd data={workListSchema(items)} />
+
+      <div className="mb-8 sm:mb-10">
+        <WorkTabs active={active} />
+      </div>
+
+      <WorkList items={visible} />
+      <JsonLd data={workListSchema(visible)} />
     </>
   );
 }

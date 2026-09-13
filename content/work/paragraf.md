@@ -1,6 +1,7 @@
 ---
 title: Paragraf - a blogging platform
 tagline: Contributing to the web app design system 
+category: web
 order: 17
 type: SoftwareApplication
 icon: /work/paragraf.png

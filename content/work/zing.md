@@ -1,6 +1,7 @@
 ---
 title: Zing - money app by HSBC Bank
 tagline: Pioneered the architecture and full-scale launch of web app
+category: web
 icon: /work/zing.webp
 order: 10
 type: SoftwareApplication
