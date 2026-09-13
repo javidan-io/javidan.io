@@ -79,42 +79,12 @@ function WorkRow({ item }: { item: WorkItem }) {
   );
 }
 
-function MoreToCome() {
-  return (
-    <li className="flex items-center gap-5 sm:gap-7">
-      <div
-        aria-hidden
-        className="flex size-18 shrink-0 items-center justify-center rounded-icon border-2 border-dashed border-hairline text-muted"
-      >
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.6"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="size-8"
-        >
-          <path d="M14.5 3.5 21 10l-2.5 2.5-2-2-8 8L5 21l-2-2 4.5-4.5 8-8-2-2z" />
-          <path d="M12 6 9 3H4l3 3" />
-        </svg>
-      </div>
-      <div className="min-w-0">
-        <h2 className="font-display text-xl font-medium text-muted">
-          More to come
-        </h2>
-      </div>
-    </li>
-  );
-}
-
 export function WorkList({ items }: { items: WorkItem[] }) {
   return (
     <ul className="space-y-3 sm:space-y-6">
       {items.map((item) => (
         <WorkRow key={item.slug} item={item} />
       ))}
-      <MoreToCome />
     </ul>
   );
 }
