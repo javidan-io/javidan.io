@@ -28,12 +28,11 @@ export default async function Home({
 
   return (
     <>
-      <header className="mb-8 sm:mb-10">
-        <h1 className="font-display text-2xl font-semibold">My Work</h1>
-        <div className="mt-4">
-          <WorkTabs active={active} />
-        </div>
-      </header>
+      <h1 className="sr-only">Work</h1>
+
+      <div className="mb-8 sm:mb-10">
+        <WorkTabs active={active} />
+      </div>
 
       <WorkList items={visible} />
       <JsonLd data={workListSchema(visible)} />
