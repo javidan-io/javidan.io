@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { navItems } from "@/lib/site";
+import { navItems, navLinkClass } from "@/lib/site";
 
 function isActive(pathname: string, href: string) {
   return href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -22,9 +22,7 @@ export function SiteNav() {
               <Link
                 href={item.href}
                 aria-current={active ? "page" : undefined}
-                className={`font-display text-lg transition-colors hover:text-ink ${
-                  active ? "font-medium text-ink" : "text-muted"
-                }`}
+                className={navLinkClass(active)}
               >
                 {item.label}
               </Link>

@@ -14,6 +14,16 @@ export const navItems: NavItem[] = [
   { href: "/about", label: "About me" },
 ];
 
+/**
+ * Link styling shared by the sidebar nav and the work tabs. Both read from
+ * here so restyling one cannot silently leave the other behind.
+ */
+export function navLinkClass(active: boolean) {
+  return `font-display text-lg transition-colors hover:text-ink ${
+    active ? "font-medium text-ink" : "text-muted"
+  }`;
+}
+
 export type WorkTabValue = "all" | "web" | "filming";
 
 export type WorkTab = {
