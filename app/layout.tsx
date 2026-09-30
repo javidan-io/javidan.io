@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import { SiteShell } from "@/components/site-shell";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -50,9 +49,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${poppins.variable} h-full antialiased`}
+      // The /filming intro script sets data-filming-intro before hydration.
+      suppressHydrationWarning
+    >
       <body className="min-h-full flex flex-col">
-        <SiteShell>{children}</SiteShell>
+        {children}
       </body>
     </html>
   );
