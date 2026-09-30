@@ -1,3 +1,12 @@
 allowBuilds:
+  # ffmpeg/ffprobe binaries are only used by the local media scripts (macOS).
+  # Their install scripts just chmod the binary; skip them on Linux servers.
+  '@ffmpeg-installer/darwin-arm64': true
+  '@ffmpeg-installer/linux-arm64': false
+  '@ffmpeg-installer/linux-x64': false
+  '@ffprobe-installer/darwin-arm64': true
+  '@ffprobe-installer/linux-arm64': false
+  '@ffprobe-installer/linux-x64': false
+  esbuild: true
   sharp: true
   unrs-resolver: true

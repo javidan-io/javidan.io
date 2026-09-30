@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1790792426458,
+      "tag": "0000_filming_media",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1790795075907,
+      "tag": "0001_description_and_views",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1790795517790,
+      "tag": "0002_albums",
+      "breakpoints": true
+    }
+  ]
+}
