@@ -1,6 +1,7 @@
 ---
 title: IntoCardano - blockchain app
 tagline: Contributing to the build of data-intensive interfaces and visualizations
+category: web
 order: 16
 type: SoftwareApplication
 icon: /work/intocardano.png

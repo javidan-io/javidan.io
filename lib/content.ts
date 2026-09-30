@@ -10,6 +10,7 @@ const CONTENT_DIR = path.join(process.cwd(), "content");
 const workFrontmatter = z.object({
   title: z.string().min(1),
   tagline: z.string().min(1),
+  category: z.enum(["web", "filming"]),
   icon: z.string().optional(),
   href: z.string().optional(),
   order: z.number().default(100),
@@ -28,6 +29,8 @@ export type WorkItem = z.infer<typeof workFrontmatter> & {
   slug: string;
   html: string;
 };
+
+export type WorkCategory = WorkItem["category"];
 
 export type Page = z.infer<typeof pageFrontmatter> & {
   slug: string;
