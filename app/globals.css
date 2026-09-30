@@ -4,6 +4,7 @@
   /* Surfaces */
   --color-page: #bccee1;
   --color-card: #ffffff;
+  --color-paper: #f3f1ed;
 
   /* Text */
   --color-ink: #1a1b1d;
@@ -167,4 +168,85 @@ body {
   border-radius: 0.75rem;
   max-width: 100%;
   height: auto;
+}
+
+/* ---------------------------------------------------------------------------
+   Filming — full-bleed gallery at /filming
+   --------------------------------------------------------------------------- */
+
+body:has(.filming-root) {
+  background-color: var(--color-paper);
+}
+
+.filming-root {
+  --filming-logo-opacity: 0.08;
+}
+
+/* Scattered grid: each tile sets --col-sm / --col-md / --shift from its slot. */
+.film-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  column-gap: 1rem;
+  row-gap: 4rem;
+}
+
+.film-tile {
+  grid-column: var(--col-sm);
+  transform: translateY(var(--shift, 0));
+}
+
+@media (min-width: 768px) {
+  .film-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 1.5rem;
+    row-gap: 7rem;
+  }
+
+  .film-tile {
+    grid-column: var(--col-md);
+  }
+}
+
+/* Intro loader: hidden before paint when already seen this session. */
+html[data-filming-intro="seen"] .intro-loader {
+  display: none;
+}
+
+@keyframes intro-mark {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes tile-in {
+  from {
+    opacity: 0;
+    transform: translateY(calc(var(--shift, 0px) + 1.5rem));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(var(--shift, 0));
+  }
+}
+
+.film-tile {
+  animation: tile-in 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--i, 0) * 40ms + 200ms);
+}
+
+/* Album viewer thumbnails: loose zig-zag on desktop, active one steps out. */
+@media (min-width: 768px) {
+  .album-thumb {
+    transform: translateX(var(--zig, 0));
+    transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .album-thumb[data-active] {
+    transform: translateX(calc(var(--zig, 0px) + 1.25rem));
+  }
 }
